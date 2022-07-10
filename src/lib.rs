@@ -1,4 +1,4 @@
-pub mod array_sortions {
+pub mod array_sort {
 
     pub fn bubble_sort<T>(arr: &mut [T])
     where
@@ -302,7 +302,7 @@ pub mod array_sortions {
 
 #[test]
 fn test_bubble_sort() {
-    use array_sortions::bubble_sort;
+    use array_sort::bubble_sort;
     let mut arr = [4, 5, 6, 7, 1, 2, 3, 8, 9, 10];
     bubble_sort(&mut arr);
     assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -310,7 +310,7 @@ fn test_bubble_sort() {
 
 #[test]
 fn test_quick_sort() {
-    use array_sortions::quick_sort;
+    use array_sort::quick_sort;
     let mut arr = [8, 9, 4, 5, 6, 7, 1, 2, 3, 10];
     quick_sort(&mut arr);
     assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -318,7 +318,7 @@ fn test_quick_sort() {
 
 #[test]
 fn test_selection_sort() {
-    use array_sortions::selection_sort;
+    use array_sort::selection_sort;
     let mut arr = [8, 9, 4, 5, 6, 7, 1, 2, 3, 10];
     selection_sort(&mut arr);
     assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -326,7 +326,7 @@ fn test_selection_sort() {
 
 #[test]
 fn test_heap_sort() {
-    use array_sortions::heap_sort;
+    use array_sort::heap_sort;
     let mut arr = [8, 9, 4, 5, 6, 7, 1, 2, 3, 10];
     heap_sort(&mut arr);
     assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -334,7 +334,7 @@ fn test_heap_sort() {
 
 #[test]
 fn test_insertion_sort() {
-    use array_sortions::insertion_sort;
+    use array_sort::insertion_sort;
     let mut arr = [8, 9, 4, 5, 6, 7, 1, 2, 3, 10];
     insertion_sort(&mut arr);
     assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -342,7 +342,7 @@ fn test_insertion_sort() {
 
 #[test]
 fn test_shell_sort() {
-    use array_sortions::shell_sort;
+    use array_sort::shell_sort;
     let mut arr = [8, 9, 4, 5, 6, 7, 1, 2, 3, 10, 0];
     shell_sort(&mut arr);
     assert_eq!(arr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -350,7 +350,7 @@ fn test_shell_sort() {
 
 #[test]
 fn test_merge_sort() {
-    use array_sortions::merge_sort;
+    use array_sort::merge_sort;
     let mut arr = [8, 9, 4, 5, 6, 7, 1, 2, 3, 10, 0];
     merge_sort(&mut arr);
     assert_eq!(arr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -358,7 +358,7 @@ fn test_merge_sort() {
 
 #[test]
 fn test_counting_sort() {
-    use array_sortions::counting_sort;
+    use array_sort::counting_sort;
     let mut arr = [8, 9, 4, 5, 6, 7, 1, 2, 3, 10, 0];
     counting_sort(&mut arr);
     assert_eq!(arr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -366,7 +366,7 @@ fn test_counting_sort() {
 
 #[test]
 fn test_radix_sort() {
-    use array_sortions::radix_sort;
+    use array_sort::radix_sort;
     let mut arr = [8, 9, 4, 5, 6, 7, 1, 2, 3, 10, 0];
     radix_sort(&mut arr);
     assert_eq!(arr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -374,7 +374,7 @@ fn test_radix_sort() {
 
 #[test]
 fn test_bucket_sort() {
-    use array_sortions::bucket_sort;
+    use array_sort::bucket_sort;
     let mut arr = [8, 9, 4, 5, 6, 7, 1, 2, 3, 10, 0];
     bucket_sort(&mut arr);
     assert_eq!(arr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);

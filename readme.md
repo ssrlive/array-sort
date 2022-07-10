@@ -1,4 +1,4 @@
-# array-sortions
+# array-sort
 Array sort algorithms for rust
 
 - bubble sort
