@@ -302,6 +302,12 @@ fn test_quick_sort() {
     let mut arr = [8, 9, 0, 4, 5, 6, 7, 1, 2, 3, 10];
     quick_sort(&mut arr);
     assert_eq!(arr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+    let mut arr = vec!["test", "6", "5", "string2", "4", "3", "1", "0"];
+    println!("{:?}", &arr);
+    quick_sort(&mut arr);
+    println!("{:?}", &arr);
+    assert_eq!(arr, ["0", "1", "3", "4", "5", "6", "string2", "test"]);
 }
 
 #[test]
