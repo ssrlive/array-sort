@@ -6,13 +6,10 @@ pub mod array_sort {
     {
         let mut i = 0;
         let mut j = 0;
-        let mut temp;
         while i < arr.len() {
             while j < arr.len() - 1 {
                 if arr[j] > arr[j + 1] {
-                    temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+                    arr.swap(j, j + 1);
                 }
                 j += 1;
             }
@@ -28,18 +25,15 @@ pub mod array_sort {
         if arr.len() > 1 {
             let mut i = 1;
             let mut j = 1;
-            let mut temp;
             let pivot = arr[0];
             while j < arr.len() {
                 if arr[j] < pivot {
-                    temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+                    arr.swap(i, j);
                     i += 1;
                 }
                 j += 1;
             }
-            temp = arr[i - 1];
+            let temp = arr[i - 1];
             arr[i - 1] = pivot;
             arr[0] = temp;
             quick_sort(&mut arr[0..i - 1]);
@@ -53,14 +47,11 @@ pub mod array_sort {
     {
         let mut i = 0;
         let mut j;
-        let mut temp;
         while i < arr.len() {
             j = i;
             while j < arr.len() {
                 if arr[i] > arr[j] {
-                    temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+                    arr.swap(i, j);
                 }
                 j += 1;
             }
@@ -134,13 +125,10 @@ pub mod array_sort {
     {
         let mut i = 1;
         let mut j;
-        let mut temp;
         while i < arr.len() {
             j = i;
             while j > 0 && arr[j] < arr[j - 1] {
-                temp = arr[j];
-                arr[j] = arr[j - 1];
-                arr[j - 1] = temp;
+                arr.swap(j, j - 1);
                 j -= 1;
             }
             i += 1;
@@ -303,17 +291,17 @@ pub mod array_sort {
 #[test]
 fn test_bubble_sort() {
     use array_sort::bubble_sort;
-    let mut arr = [4, 5, 6, 7, 1, 2, 3, 8, 9, 10];
+    let mut arr = [4, 5, 6, 7, 1, 2, 3, 8, 9, 10, 0];
     bubble_sort(&mut arr);
-    assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    assert_eq!(arr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 }
 
 #[test]
 fn test_quick_sort() {
     use array_sort::quick_sort;
-    let mut arr = [8, 9, 4, 5, 6, 7, 1, 2, 3, 10];
+    let mut arr = [8, 9, 0, 4, 5, 6, 7, 1, 2, 3, 10];
     quick_sort(&mut arr);
-    assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    assert_eq!(arr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 }
 
 #[test]
